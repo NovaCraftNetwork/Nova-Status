@@ -1,0 +1,35 @@
+{
+  "token": "YOUR_DISCORD_BOT_TOKEN",
+  "channelId": "YOUR_DISCORD_CHANNEL_ID",
+  "serverIp": "YOUR_MINECRAFT_SERVER_IP",
+  "apiUrl": "https://api.mcsrvstat.us/2/",
+  "statusMessageFile": "./message_id.txt",
+  "checkInterval": 300000,
+
+  "statusConditions": [
+    {
+      "match": "maintenance",
+      "emoji": "🟠",
+      "label": "Maintenance",
+      "color": "ffa500"
+    },
+    {
+      "match": "offline",
+      "emoji": "🔴",
+      "label": "Offline",
+      "color": "ff0000"
+    },
+    {
+      "match": "online",
+      "emoji": "🟣",
+      "label": "Online",
+      "color": "bc02cd"
+    }
+  ],
+
+  "embed": {
+    "title": "NovaCraft Status",
+    "thumbnail": "https://i.imgur.com/3jLKrYx.png",
+    "footer": "Last checked"
+  }
+}
