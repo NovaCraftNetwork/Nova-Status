@@ -49,6 +49,7 @@ async function checkStatus() {
 }
 
 client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}`);
   checkStatus();
   setInterval(checkStatus, config.checkInterval);
 });
