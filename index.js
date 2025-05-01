@@ -55,3 +55,17 @@ client.once('ready', () => {
 });
 
 client.login(config.token);
+
+if (config.enableExpress) {
+  const express = require('express');
+  const app = express();
+  const PORT = config.port || 3000;
+
+  app.get('/', (req, res) => {
+    res.send('Bot is online!');
+  });
+
+  app.listen(PORT, () => {
+    console.log(`Express server running on port ${PORT}`);
+  });
+}
