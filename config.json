@@ -5,6 +5,8 @@
   "apiUrl": "https://api.mcsrvstat.us/2/",
   "statusMessageFile": "./message_id.txt",
   "checkInterval": 300000,
+  "enableExpress": false,
+  "port": 3000,
 
   "statusConditions": [
     {
