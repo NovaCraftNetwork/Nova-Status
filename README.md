@@ -1,48 +1,65 @@
 # 🌌 Nova Status Bot
 
-**Nova Status** is a highly configurable and easy-to-use Discord bot that allows you to display the status of your Minecraft server directly on Discord.
+**Nova Status** is a configurable Discord bot that displays the status of your Minecraft server directly in Discord.
 
 ## ⚙️ Setup Instructions
 
-Follow these simple steps to get your bot up and running:
+1. **Fork or Download the Repository**
+   - **Fork** this repository or **download** it as a ZIP file.
 
-1. **Fork or Download the Repository**  
-To get started, either **fork** this repository to your GitHub account or **download** it as a ZIP file.
-
-2. **Configure the `config.json` File**  
-Open the `config.json` file and replace the placeholder values with your own details. Here’s an example configuration:
+2. **Configure the `config.json` File**
+   Open the `config.json` file and update the placeholder values. Example:
 
     ```json
     {
       "token": "YOUR_DISCORD_BOT_TOKEN",
       "channelId": "YOUR_DISCORD_CHANNEL_ID",
-      "serverIp": "YOUR_MINECRAFT_SERVER_IP"
+      "serverIp": "YOUR_MINECRAFT_SERVER_IP",
+      "enableExpress": true,
+      "port": 3000,
+      "checkInterval": 300000,
+      "statusMessageFile": "./message_id.txt",
+      "statusConditions": [
+        {
+          "match": "maintenance",
+          "emoji": "🟠",
+          "label": "Maintenance",
+          "color": "ffa500"
+        },
+        {
+          "match": "offline",
+          "emoji": "🔴",
+          "label": "Offline",
+          "color": "ff0000"
+        },
+        {
+          "match": "online",
+          "emoji": "🟣",
+          "label": "Online",
+          "color": "bc02cd"
+        }
+      ],
+      "embed": {
+        "title": "NovaCraft Status",
+        "thumbnail": "https://i.imgur.com/3jLKrYx.png",
+        "footer": "Last checked"
+      }
     }
     ```
 
-    - **token**: Your Discord bot’s token. You can generate this by creating a bot on the [Discord Developer Portal](https://discord.com/developers/applications).
-    - **channelId**: The ID of the Discord channel where you want the server status to appear. To get the channel ID, enable "Developer Mode" in Discord settings and right-click the channel to copy its ID.
-    - **serverIp**: The IP address of your Minecraft server.
+    - **`token`**: Your bot's token from the [Discord Developer Portal](https://discord.com/developers/applications).
+    - **`channelId`**: The ID of the Discord channel where the status should appear.
+    - **`serverIp`**: The IP address of your Minecraft server.
+    - **`enableExpress`**: Set to `true` if you want to monitor your bot with [UptimeRobot](https://uptimerobot.com/).
+    - **`port`**: Port number for the Express server (default is 3000).
+    - **`checkInterval`**: How often (in milliseconds) to check the server status (default is 5 minutes).
+  
+3. **Install Dependencies**
+   Run `npm install` to install the required dependencies.
 
-    **Note**: If you're using a free hosting provider or testing locally, your bot’s node could be temporarily blocked due to too many requests or frequent restarts (typically 15-30 minutes). If this happens, try to wait or reduce the frequency of requests to avoid triggering rate limits.
+4. **Run the Bot**
+   Start the bot using `node index.js`.
 
-3. **Install Dependencies**  
-Open your terminal or command prompt, navigate to the project folder, and run:
-
-    ```bash
-    npm install
-    ```
-
-    This will install all the necessary dependencies for your bot to function properly.
-
-4. **Run the Bot**  
-Start the bot by running the following command:
-
-    ```bash
-    node index.js
-    ```
-
-    If everything is set up correctly, your bot should now be live and displaying your Minecraft server status in the specified Discord channel!
 
 ## 🔧 Troubleshooting
 
@@ -69,7 +86,7 @@ For hosting your bot, you have several options, both free and paid:
    - Pella is a free, Discord bot-focused hosting platform designed to make deploying and managing bots simple. It offers a clean web interface and one-click deployment.
    - **Limitations**: May experience queue times during peak usage and limited runtime resources compared to paid options.
 
-3. **[Silly Dev](https://sillydev.co.uk/)** (Reccomended)
+3. **[Silly Dev](https://sillydev.co.uk/)** (Recommended)
    - Silly Dev provides free and premium Discord bot hosting with a focus on performance and community. It offers features like auto-restart, uptime monitoring, and a user-friendly dashboard.
    - **Limitations**: Free tier may include resource caps and occasional downtime during maintenance or high traffic periods.
 
