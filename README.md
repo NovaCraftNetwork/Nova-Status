@@ -69,7 +69,7 @@ For hosting your bot, you have several options, both free and paid:
    - Pella is a free, Discord bot-focused hosting platform designed to make deploying and managing bots simple. It offers a clean web interface and one-click deployment.
    - **Limitations**: May experience queue times during peak usage and limited runtime resources compared to paid options.
 
-3. **[Silly Dev](https://sillydev.co.uk/)**  
+3. **[Silly Dev](https://sillydev.co.uk/)** (Reccomended)
    - Silly Dev provides free and premium Discord bot hosting with a focus on performance and community. It offers features like auto-restart, uptime monitoring, and a user-friendly dashboard.
    - **Limitations**: Free tier may include resource caps and occasional downtime during maintenance or high traffic periods.
 
