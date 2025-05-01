@@ -12,9 +12,9 @@
 
     ```json
     {
-      "token": "YOUR_DISCORD_BOT_TOKEN",
-      "channelId": "YOUR_DISCORD_CHANNEL_ID",
-      "serverIp": "YOUR_MINECRAFT_SERVER_IP",
+      "token": "MTAwMzA0NjEwMDAwMDAwMzYxOQ.FAKE-TOKEN.abcd1234NOTAREALTOKEN5678",
+      "channelId": "000000000000000000",
+      "serverIp": "novacraft.playit.gg",
       "enableExpress": true,
       "port": 3000,
       "checkInterval": 300000,
